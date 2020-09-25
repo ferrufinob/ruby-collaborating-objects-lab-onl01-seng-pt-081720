@@ -13,8 +13,9 @@ class MP3Importer
   # need 'size' method(split?)
 
   def files
-    
-    Dir[@path +"/*.mp3"].map {|file| file.split("/").last }
+    # Dir[@path +"/*.mp3"].map {|file| file.split("/").last }
+   Dir.entries(@path).delete_if {|file| file == (".") || file == ("..")}
+   
   end
   
   # import: send files into the library by creating songs from a filename.

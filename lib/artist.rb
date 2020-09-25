@@ -1,3 +1,4 @@
+require 'pry'
 class Artist
   attr_accessor :name, :songs
   
@@ -32,7 +33,6 @@ class Artist
   
   def self.find(name)
     self.all.find {|x| x.name}
-    
   end
   
   def self.create(name)
